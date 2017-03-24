@@ -1,3 +1,9 @@
 1. As a non-logged in Visitor, I want to see the Home page so that I can see information about the site and join the site.
 
 2. As a Host, I can register for the site so that I can post a Location.
+
+3. As a Host, I want to fill out profile information about myself so that Guests will feel comfortable staying with me.
+
+4. As a Member, I can login to the site so that I can use the site.
+
+5. As a Member, I want to sign out of the site so that no one else can use the site with my account.
