@@ -1,0 +1,2 @@
+class Localtion < ApplicationRecord
+end
