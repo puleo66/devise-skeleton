@@ -8,6 +8,13 @@ RSpec.describe Localtion, type: :model do
   	end
 
   	it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:address_1) }
+    it { should validate_presence_of(:address_2) }
+    it { should validate_presence_of(:city) }
+    it { should validate_presence_of(:region) }
+    it { should validate_presence_of(:zip_code) }
+    it { should validate_presence_of(:country) }
+    it { should validate_presence_of(:description) }
   	it { should validate_presence_of(:member_id) }
   end
 

@@ -36,14 +36,15 @@ gem 'bcrypt', '~> 3.1.11'
 
 gem 'devise'
 gem 'pundit'
-gem 'paperclip', '~> 4.3.0'
+gem 'paperclip', '~> 5.2.0'
+gem 'country_select'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   #gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.7.0'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.3.0'
   gem 'better_errors'
   #gem 'capybara-webkit'
   gem 'factory_girl_rails'

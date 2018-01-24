@@ -49,23 +49,23 @@ RSpec.describe ProfilesController, type: :controller do
   describe "GET #show" do
     it "assigns the requested profile as @profile" do
       profile = Profile.create! valid_attributes
-      get :show, params: {:member_id => member.id, id: profile.to_param}, session: valid_session
+      get :show, params: {member_id: member.id, id: profile.to_param}, session: valid_session
       expect(assigns(:profile)).to eq(profile)
     end
   end
 
   describe "GET #new" do
     it "assigns a new profile as @profile" do
-      get :new, params: {:member_id => member.id}, session: valid_session
-      #expect(assigns(:profile)).to be_a_new(Profile)
-      expect(assigns(:profile)).to be_a(Profile)
+      get :new, params: {member_id: member.id}
+      expect(assigns(:profile)).to be_a_new(Profile)
+      #expect(assigns(:profile)).to be_a(Profile)
     end
   end
 
   describe "GET #edit" do
     it "assigns the requested profile as @profile" do
       profile = Profile.create! valid_attributes
-      get :edit, params: {:member_id => member.id, id: profile.to_param}, session: valid_session
+      get :edit, params: {member_id: member.id, id: profile.to_param}, session: valid_session
       expect(assigns(:profile)).to eq(profile)
     end
   end
@@ -74,18 +74,18 @@ RSpec.describe ProfilesController, type: :controller do
     context "with valid params" do
       it "creates a new Profile" do
         expect {
-          post :create, params: {:member_id => member.id, profile: valid_attributes}, session: valid_session
+          post :create, params: {member_id: member.id, profile: valid_attributes}, session: valid_session
         }.to change(Profile, :count).by(0)
       end
 
       it "assigns a newly created profile as @profile" do
-        post :create, params: {:member_id => member.id, profile: valid_attributes}, session: valid_session
+        post :create, params: {profile: valid_attributes}, session: valid_session
         expect(assigns(:profile)).to be_a(Profile)
         expect(assigns(:profile)).to be_persisted
       end
 
       it "redirects to the created profile" do
-        post :create, params: {:member_id => member.id, profile: valid_attributes}, session: valid_session
+        post :create, params: {member_id: member.id, profile: valid_attributes}, session: valid_session
         #expect(response).to redirect_to(Profile.last)
         profile = member.profile
         expect(response).to redirect_to(member_profile_path(member, profile))
@@ -94,12 +94,12 @@ RSpec.describe ProfilesController, type: :controller do
 
     context "with invalid params" do
       it "assigns a newly created but unsaved profile as @profile" do
-        post :create, params: {:member_id => member.id, profile: invalid_attributes}, session: valid_session
+        post :create, params: {member_id: member.id, profile: invalid_attributes}, session: valid_session
         expect(assigns(:profile)).to be_a_new(Profile)
       end
 
       it "re-renders the 'new' template" do
-        post :create, params: {:member_id => member.id, profile: invalid_attributes}, session: valid_session
+        post :create, params: {profile: invalid_attributes}, session: valid_session
         expect(response).to render_template("new")
       end
     end

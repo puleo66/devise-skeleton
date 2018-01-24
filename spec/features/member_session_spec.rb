@@ -11,7 +11,8 @@ feature "member session -" do
 	end
 
 	scenario "member logs out of site" do
-		click_link "Sign out"
+		#click_link "Sign out"
+		page.find(:xpath, "//a[@href='/members/sign_out']").click
 		expect(page).to have_content("Signed out successfully.")
 	end
 

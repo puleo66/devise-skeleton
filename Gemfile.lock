@@ -66,7 +66,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.6.2)
       ffi (~> 1.0, >= 1.0.11)
-    climate_control (0.1.0)
+    climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
@@ -78,6 +78,14 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    countries (2.0.8)
+      i18n_data (~> 0.7.0)
+      money (~> 6.7)
+      sixarm_ruby_unaccent (~> 1.1)
+      unicode_utils (~> 1.4)
+    country_select (3.0.0)
+      countries (~> 2.0)
+      sort_alphabetical (~> 1.0)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.2.1)
@@ -102,6 +110,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
+    i18n_data (0.7.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -117,21 +126,24 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.0)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    money (6.8.2)
+      i18n (>= 0.6.4, < 0.9)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
     multi_json (1.12.1)
     mysql2 (0.4.5-x86-mingw32)
     nio4r (2.0.0)
     nokogiri (1.7.1-x86-mingw32)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-    paperclip (4.3.7)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
+    paperclip (5.2.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (= 0.3.0)
+      mimemagic (~> 0.3.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -203,7 +215,10 @@ GEM
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_bdd (0.1.0)
+    sixarm_ruby_unaccent (1.1.1)
     slop (3.6.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (2.0.1)
       activesupport (>= 4.2)
     sprockets (4.0.0.beta4)
@@ -224,6 +239,7 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.1.9)
       execjs (>= 0.3.0, < 3)
+    unicode_utils (1.4.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -246,6 +262,7 @@ DEPENDENCIES
   better_errors
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
+  country_select
   database_cleaner
   devise
   factory_girl_rails
@@ -254,7 +271,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   letter_opener
   mysql2 (>= 0.3.18, < 0.5)
-  paperclip (~> 4.3.0)
+  paperclip (~> 5.2.0)
   pry
   pry-nav
   pry-rails
@@ -264,7 +281,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails
   sass-rails!
-  selenium-webdriver
+  selenium-webdriver (~> 3.3.0)
   shoulda-matchers
   simple_bdd
   spring
